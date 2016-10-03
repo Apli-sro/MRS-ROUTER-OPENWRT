@@ -39,6 +39,7 @@
 
 #include <ralink_regs.h>
 
+
 #include <asm/mach-ralink/rt305x_esw_platform.h>
 
 /*
@@ -155,6 +156,8 @@
 #define RT305X_ESW_POA_LINK_MASK	0x1f
 #define RT305X_ESW_POA_LINK_SHIFT	25
 
+#define RT305X_EWS_REG_LED_POLARITY     0x168
+
 #define RT305X_ESW_PORT_ST_CHG		BIT(26)
 #define RT305X_ESW_PORT0		0
 #define RT305X_ESW_PORT1		1
@@ -192,6 +195,7 @@
 #define RT5350_ESW_REG_PXTPC(_x)	(0x150 + (4 * _x))
 #define RT5350_EWS_REG_LED_POLARITY	0x168
 #define RT5350_RESET_EPHY		BIT(24)
+
 
 enum {
 	/* Global attributes. */
@@ -496,6 +500,9 @@ static void esw_hw_init(struct rt305x_esw *esw)
 	else
 		esw_w32(esw, esw->pdata->reg_initval_fpa2, RT305X_ESW_REG_FPA2);
 	esw_w32(esw, 0x00000000, RT305X_ESW_REG_FPA);
+	
+	
+	esw_w32(esw, 0x1F, RT305X_EWS_REG_LED_POLARITY);
 
 	/* Force Link/Activity on ports */
 	esw_w32(esw, 0x00000005, RT305X_ESW_REG_P0LED);

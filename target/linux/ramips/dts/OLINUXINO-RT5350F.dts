@@ -41,6 +41,25 @@
                                 };
                         };
                 };
+		spi@b00 {
+                        status = "okay";
+                        m25p80@1 {
+                                #address-cells = <1>;
+                                #size-cells = <1>;
+                                compatible = "s25fl064k";
+                                reg = <1 1>;
+                                linux,modalias = "m25p80", "s25fl064k";
+                                spi-max-frequency = <10000000>;
+
+                                partition0 {
+                                        label = "storage";
+                                        reg = <0x0 0x7b0000>;
+                                        
+                                };
+
+                               
+                        };
+                };
                 gpio1: gpio@660 {
                         status = "okay";
                 };
@@ -48,16 +67,20 @@
                 i2c@900 {
                         status = "okay";
                 };
+
+		
         };
 
         pinctrl {
                 state_default: pinctrl0 {
                         gpio {
-                                ralink,group = "jtag", "rgmii", "mdio", "uartf";
+                                ralink,group = "jtag", "rgmii", "mdio";
                                 ralink,function = "gpio";
                         };
                 };
         };
+
+	
 
         ethernet@10100000 {
                 mtd-mac-address = <&factory 0x4>;

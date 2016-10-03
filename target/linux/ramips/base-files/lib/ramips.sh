@@ -428,8 +428,8 @@ ramips_board_detect() {
 
 	[ -e "/tmp/sysinfo/" ] || mkdir -p "/tmp/sysinfo/"
 
-	echo "$RAMIPS_BOARD_NAME" > /tmp/sysinfo/board_name
-	echo "$RAMIPS_MODEL" > /tmp/sysinfo/model
+	echo "MRS-ROUTER" > /tmp/sysinfo/board_name
+	echo "V1" > /tmp/sysinfo/model
 }
 
 ramips_board_name() {

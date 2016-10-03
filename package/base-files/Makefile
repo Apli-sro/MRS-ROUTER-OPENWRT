@@ -140,6 +140,7 @@ define Package/base-files/install
 
 	mkdir -p $(1)/CONTROL
 	mkdir -p $(1)/dev
+	mkdir -p $(1)/storage
 	mkdir -p $(1)/etc/crontabs
 	mkdir -p $(1)/etc/rc.d
 	mkdir -p $(1)/overlay
@@ -162,6 +163,7 @@ define Package/base-files/install
 
 	chmod 0600 $(1)/etc/shadow
 	chmod 1777 $(1)/tmp
+	chmod 1777 $(1)/storage
 
 	$(call ImageConfigOptions,$(1))
 	$(call Package/base-files/install-target,$(1))
