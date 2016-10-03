@@ -1,0 +1,23 @@
+
+config proxy
+	option state 'raw'
+	option timeout '0'
+	option baudrate '38400'
+	option bind '0.0.0.0'
+	option tcpport '2000'
+	option device '/dev/ttyS0'
+	option parity 'NONE'
+	option stop '2STOPBITS'
+	option data '8DATABITS'
+
+config proxy
+	option state 'raw'
+	option bind '0.0.0.0'
+	option tcpport '5000'
+	option timeout '0'
+	option device '/dev/ttyS1'
+	option baudrate '2400'
+	option parity 'EVEN'
+	option stop '1STOPBIT'
+	option data '8DATABITS'
+
