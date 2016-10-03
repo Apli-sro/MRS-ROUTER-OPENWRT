@@ -1,0 +1,8 @@
+
+config mount
+	option enabled '1'
+	option device '/dev/mtdblock7'
+	option target '/storage'
+	option fstype 'jffs2'
+	option options 'rw,noatime'
+

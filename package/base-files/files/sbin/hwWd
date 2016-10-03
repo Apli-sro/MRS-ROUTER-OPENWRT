@@ -1,0 +1,12 @@
+#!/bin/ash
+sleep 10
+echo 0 > /sys/class/gpio/export
+echo "out" > /sys/class/gpio/gpio0/direction
+while :
+do
+echo "0" > /sys/class/gpio/gpio0/value
+sleep 1
+echo "1" > /sys/class/gpio/gpio0/value
+sleep 1
+
+done
