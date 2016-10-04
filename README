@@ -1,3 +1,13 @@
+MRS-ROUTER openwrt mod
+=======
+
+after clone run ./updateFeeds.sh
+make menuconfig & make
+
+Changed Lan LED configuration
+Added scripts for WD
+Mount options for second flash memory
+
 This is the buildsystem for the OpenWrt Linux distribution.
 
 Please use "make menuconfig" to configure your appreciated
